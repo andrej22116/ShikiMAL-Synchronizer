@@ -1,14 +1,9 @@
 import axios from "axios";
-import EventEmitter from "events";
 import OauthStore from "../../store/OauthStore";
+import UserStore from "../../store/UserStore";
 
 const ShikimoriApi = new class {
-    /**
-     * 
-     * @param {OauthClient} oauthClient 
-     */
     constructor() {
-        this.emitter = new EventEmitter;
         this.axios = axios.create({
             baseURL: 'https://shikimori.one/api/',
             headers: {
@@ -25,8 +20,16 @@ const ShikimoriApi = new class {
     }
 
     Users = {
+        user: id => {
+            return this.axios.get(`/users/${id}`).then( response => response.data );
+        },
+
         whoAmI: () => {
             return this.axios.get('/users/whoami').then( response => response.data );
+        },
+
+        animeRates: ( params ) => {
+            return this.axios.get(`/users/${UserStore.shikimori.id}/anime_rates`, {params}).then( response => response.data );
         }
     }
 };
