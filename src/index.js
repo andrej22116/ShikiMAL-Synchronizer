@@ -13,9 +13,6 @@ import EventEmitter from "events";
   }
 
   window.emitter = new EventEmitter();
-  /*window.emitter.on('auth-shikimori', params => {
-    //alert(params.get('code'));
-  });*/
 
   ReactDOM.render(
     <React.StrictMode>

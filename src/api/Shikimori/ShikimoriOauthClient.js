@@ -2,7 +2,6 @@ import {id, secret} from "./secret";
 import OauthClient from "../OauthClient";
 import axios from "axios";
 import OauthStore from "../../store/OauthStore";
-import { makeObservable, observable } from "mobx";
 import ShikimoriOauthWindow from "./ShikimoriOauthWindow";
 
 export default class ShikimoriOauthClient extends OauthClient {
