@@ -107,13 +107,3 @@ export default class ShikimoriOauthClient extends OauthClient {
         this._refreshToken = window.localStorage.getItem('shikimori_r') || null;
     }
 }
-
-/*const ShikimoriAuth = new ClientOAuth2({
-    clientId: 'O-qL5TOxgz0oLdszEC9HBpWxaYwdSnUmd8D72or2h0I',
-    clientSecret: 'hXeND8Hb4AyBpMBuuyxXqS_6714ZSAyNMKkh_Yp8KGk',
-    accessTokenUri: 'https://shikimori.one/oauth/token',
-    authorizationUri: 'https://shikimori.one/oauth/authorize?client_id=O-qL5TOxgz0oLdszEC9HBpWxaYwdSnUmd8D72or2h0I&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=user_rates',
-    redirectUri: 'https://andrej22116.byethost5.com/'
-});*/
-
-//export default ShikimoriAuth;
