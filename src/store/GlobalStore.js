@@ -1,9 +1,11 @@
 import OauthStore from "./OauthStore";
+import SettingsStore from "./SettingsStore";
 import UserStore from "./UserStore";
 
 const GlobalStore = {
     OauthStore,
-    UserStore
+    UserStore,
+    SettingsStore
 };
 
 export default GlobalStore;

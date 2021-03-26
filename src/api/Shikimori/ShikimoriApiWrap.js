@@ -3,7 +3,7 @@ import ShikimoriApi from "./ShikimoriApi";
 
 export default class ShikimoriApiWrap extends IApiWrap {
     async user() {
-        return ShikimoriApi.Users.whoAmI().then(data => ({
+        return ShikimoriApi.Users.me().then(data => ({
             id: data.id,
             nickname: data.nickname,
             picSrc: data.image.x160

@@ -2,9 +2,10 @@ import ShikimoriOauthClient from "../../api/Shikimori/ShikimoriOauthClient";
 import OauthStore from "../../store/OauthStore";
 import UserStore from "../../store/UserStore";
 import AuthBlock from "./AuthBlock";
+import MenuUserBlock from "./MenuUserBlock";
 
 const oauthClient = new ShikimoriOauthClient();
-oauthClient.token();
+oauthClient.logged();
 
 const ShikimoriAuthBlock = () => (
     <AuthBlock 
@@ -14,4 +15,7 @@ const ShikimoriAuthBlock = () => (
     />
 );
 
+const ShikimoriMenuBlock = () => <MenuUserBlock userStore={UserStore.shikimori} authClient={oauthClient} />;
+
 export default ShikimoriAuthBlock;
+export {ShikimoriMenuBlock};

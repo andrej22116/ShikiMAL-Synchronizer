@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import EventEmitter from "events";
+import { observer } from 'mobx-react';
+import UserStore from "./store/UserStore";
+import AuthorizationStage from './components/Auth/AuthorizationStage';
 
 (function(){
   if ( window.opener ) {
@@ -14,9 +17,19 @@ import EventEmitter from "events";
 
   window.emitter = new EventEmitter();
 
+  const InitialStage = observer( ({shikimori, myAnimeList}) => (
+    <>
+      {
+        shikimori.id > 0 && myAnimeList.id > 0
+        ? <App />
+        : <AuthorizationStage />
+      }
+    </>
+  ));
+
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <InitialStage shikimori={UserStore.shikimori} myAnimeList={UserStore.myAnimeList}/>
     </React.StrictMode>,
     document.getElementById('root')
   );

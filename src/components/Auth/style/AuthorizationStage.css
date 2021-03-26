@@ -1,0 +1,46 @@
+.authorization-stage {
+    width: 100%;
+    height: 100vh;
+}
+
+.authorization-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authorization-stage-block {
+    max-width: 762px;
+    backdrop-filter: blur(24px);
+}
+
+.auth-colorization-shiki-text {
+    color: black;
+}
+.auth-colorization-mal-text {
+    color: white;
+}
+.auth-colorization-shiki-text-rev {
+    color: white;
+}
+.auth-colorization-mal-text-rev {
+    color: #2e51a1;
+}
+.auth-colorization-shiki-bg {
+    background-color: rgba(255,255,255,0.9);
+}
+.auth-colorization-mal-bg {
+    background-color: rgba(46,81,161,0.9);
+}
+
+.authorization-stage-block-header {
+
+}
+
+.authorization-stage-block-body {
+    display: flex;
+    justify-content: space-between;
+}
+.authorization-stage-block-body>div {
+    width: 50%
+}

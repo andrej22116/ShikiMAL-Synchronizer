@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 const AuthButton = observer(({client}) => (
-    <button onClick={() => client.authorize()}>
+    <button onClick={() => client.login()}>
         Авторизоваться
     </button>
 ));
@@ -10,11 +10,11 @@ const AuthButton = observer(({client}) => (
 const UserProfileInfo = observer(({store, client}) => (
     <div>
         {
-            store.id == 0
+            store.id === 0
             ? (<div> ... </div>)
             : (
                 <>
-                    <div><img src={store.picSrc}/></div>
+                    <div><img src={store.picSrc} alt={store.nickname}/></div>
                     <div>
                         <h2>{store.nickname}</h2>
                         <button onClick={() => client.logout()}>Выйти</button>

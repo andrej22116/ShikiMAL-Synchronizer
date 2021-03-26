@@ -1,9 +1,7 @@
 import { makeAutoObservable, reaction  } from "mobx";
 import ShikimoriApiWrap from "../api/Shikimori/ShikimoriApiWrap";
-import IApiWrap from "../api/IApiWrap";
 import OauthStore from "./OauthStore";
 import MyAnimeListApiWrap from "../api/MyAnimeList/MyAnimeListApiWrap";
-import ShikimoriApi from "../api/Shikimori/ShikimoriApi";
 
 /**
  * @param {IApiWrap} api 
@@ -18,6 +16,9 @@ function UserBaseStore( api ) {
             this.nickname = data.nickname;
             this.picSrc = data.picSrc;
         },
+        setNoUser() {
+            this.setUserData({id:0,nickname:"", picSrc:""});
+        },
         async updateUser() {
             this.setUserData(await api.user());
         },
@@ -28,8 +29,8 @@ function UserBaseStore( api ) {
 }
 
 const UserStore = {
-    shikimori: UserBaseStore(new ShikimoriApiWrap),
-    myAnimeList: UserBaseStore(new MyAnimeListApiWrap),
+    shikimori: UserBaseStore(new ShikimoriApiWrap()),
+    myAnimeList: UserBaseStore(new MyAnimeListApiWrap()),
 };
 
 reaction(
@@ -38,13 +39,20 @@ reaction(
         if ( OauthStore.shikimori.isAuthorized ) {
             UserStore.shikimori.updateUser();
         }
+        else {
+            UserStore.shikimori.setNoUser();
+        }
     }
 )
+
 reaction(
     () => OauthStore.myAnimeList.isAuthorized,
     () => {
         if ( OauthStore.myAnimeList.isAuthorized ) {
             UserStore.myAnimeList.updateUser();
+        }
+        else {
+            UserStore.myAnimeList.setNoUser();
         }
     }
 )
@@ -53,8 +61,8 @@ reaction(
     () => UserStore.shikimori.id,
     () => {
         if ( UserStore.shikimori.id > 0 ) {
-            UserStore.shikimori.test();
-            ShikimoriApi.Users.user(UserStore.shikimori.id).then( data => console.log(data) );
+            //UserStore.shikimori.test();
+            //ShikimoriApi.Users.user(UserStore.shikimori.id).then( data => console.log(data) );
         }
     }
 )
@@ -62,7 +70,7 @@ reaction(
     () => UserStore.myAnimeList.id,
     () => {
         if ( UserStore.myAnimeList.id > 0 ) {
-            UserStore.myAnimeList.test();
+            //UserStore.myAnimeList.test();
         }
     }
 )

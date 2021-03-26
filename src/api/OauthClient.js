@@ -4,16 +4,12 @@ export default class OauthClient {
         throw new Error('Method "name" not implemented!');
     }
 
-    authorize() {
-        throw new Error('Method "authorize" not implemented!');
+    login() {
+        throw new Error('Method "login" not implemented!');
     }
 
-    async token( code = null ) {
-        throw new Error('Method "getToken" not implemented!');
-    }
-
-    async refreshToken() {
-        throw new Error('Method "refreshToken" not implemented!');
+    async logged( code = null ) {
+        throw new Error('Method "logged" not implemented!');
     }
 
     logout() {

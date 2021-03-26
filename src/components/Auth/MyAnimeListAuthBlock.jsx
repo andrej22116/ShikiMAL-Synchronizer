@@ -2,9 +2,10 @@ import MyAnimeListOauthClient from "../../api/MyAnimeList/MyAnimeListOauthClient
 import OauthStore from "../../store/OauthStore";
 import UserStore from "../../store/UserStore";
 import AuthBlock from "./AuthBlock";
+import MenuUserBlock from "./MenuUserBlock";
 
 const oauthClient = new MyAnimeListOauthClient();
-oauthClient.token();
+oauthClient.logged();
 
 const MyAnimeListAuthBlock = () => (
     <AuthBlock 
@@ -14,4 +15,7 @@ const MyAnimeListAuthBlock = () => (
     />
 );
 
+const MyAnimeListMenuBlock = () => <MenuUserBlock userStore={UserStore.myAnimeList} authClient={oauthClient} />;
+
 export default MyAnimeListAuthBlock;
+export {MyAnimeListMenuBlock};

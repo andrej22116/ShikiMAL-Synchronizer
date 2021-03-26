@@ -1,15 +1,13 @@
 import React from "react"
 
 import './App.css';
-import MyAnimeListAuthBlock from "./components/Auth/MyAnimeListAuthBlock";
-import ShikimoriAuthBlock from "./components/Auth/ShikimoriAuthBlock";
+import LeftMenu from "./components/LeftMenu/LeftMenu";
 
 function App() {
 
   return (
     <div className="App">
-      <ShikimoriAuthBlock/>
-      <MyAnimeListAuthBlock/>
+      <LeftMenu />
     </div>
   );
 }
