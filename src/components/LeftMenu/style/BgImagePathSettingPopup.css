@@ -1,0 +1,19 @@
+.bg-image-path-setting,
+.bg-image-path-setting>div {
+    display: flex;
+}
+
+.bg-image-path-setting {
+    flex-direction: column;
+}
+
+.bg-image-path-setting>h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.bg-image-path-setting-btn {
+    margin-left: 16px;
+}

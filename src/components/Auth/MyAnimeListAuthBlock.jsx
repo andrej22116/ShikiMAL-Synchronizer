@@ -15,7 +15,7 @@ const MyAnimeListAuthBlock = () => (
     />
 );
 
-const MyAnimeListMenuBlock = () => <MenuUserBlock userStore={UserStore.myAnimeList} authClient={oauthClient} />;
+const MyAnimeListMenuBlock = () => <MenuUserBlock userStore={UserStore.myAnimeList} authClient={oauthClient} titleStyleName="icon-mal" />;
 
 export default MyAnimeListAuthBlock;
 export {MyAnimeListMenuBlock};

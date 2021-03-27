@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/MenuUserBlock.css";
 
-const MenuUserBlock = ({userStore, authClient}) => {
+const MenuUserBlock = ({userStore, authClient, titleStyleName}) => {
     return (
         <div className="menu-user-block" >
             <div className="menu-user-block-base-img menu-user-block-img-wrap">
@@ -12,7 +12,10 @@ const MenuUserBlock = ({userStore, authClient}) => {
                     <img src={userStore.picSrc} alt={userStore.nickname} title={userStore.nickname}/>
                 </div>
                 <div className="menu-user-block-overlay-info">
-                    <p title={userStore.nickname}>{userStore.nickname}</p>
+                    <div className="menu-user-block-overlay-info-text">
+                        <i className={titleStyleName}></i>
+                        <p title={userStore.nickname}>{userStore.nickname}</p>
+                    </div>
                     <button onClick={() => authClient.logout()}>Logout</button>
                 </div>
             </div>

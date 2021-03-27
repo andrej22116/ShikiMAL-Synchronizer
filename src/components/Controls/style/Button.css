@@ -1,0 +1,20 @@
+.base-button {
+    border: 2px solid rgba(255,255,255,0.15);
+    background-color: rgba(0,0,0,0.5);
+    height: 2em;
+    padding: 0 16px;
+    color: white;
+    outline: none;
+    transition: .1s;
+    box-sizing:content-box;
+}
+.base-button:not(:disabled):hover {
+    border: 2px solid rgba(255,255,255,0.5);
+}
+.base-button:not(:disabled):active {
+    background-color: rgba(255,255,255,0.1);
+}
+.base-button:disabled {
+    border: 2px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.5);
+}

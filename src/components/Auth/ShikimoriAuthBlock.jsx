@@ -15,7 +15,7 @@ const ShikimoriAuthBlock = () => (
     />
 );
 
-const ShikimoriMenuBlock = () => <MenuUserBlock userStore={UserStore.shikimori} authClient={oauthClient} />;
+const ShikimoriMenuBlock = () => <MenuUserBlock userStore={UserStore.shikimori} authClient={oauthClient} titleStyleName="icon-shikimori" />;
 
 export default ShikimoriAuthBlock;
 export {ShikimoriMenuBlock};

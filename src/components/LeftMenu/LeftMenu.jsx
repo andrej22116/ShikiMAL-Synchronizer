@@ -1,6 +1,7 @@
 import React from "react";
 import { MyAnimeListMenuBlock } from "../Auth/MyAnimeListAuthBlock";
 import { ShikimoriMenuBlock } from "../Auth/ShikimoriAuthBlock";
+import BgImagePathSettingPopup from "./BgImagePathSettingPopup";
 import "./style/LeftMenu.css";
 
 const LeftMenu = () => {
@@ -16,7 +17,7 @@ const LeftMenu = () => {
 
                 </div>
                 <div className="left-menu-items-bottom">
-
+                    <BgImagePathSettingPopup />
                 </div>
             </div>
         </div>
