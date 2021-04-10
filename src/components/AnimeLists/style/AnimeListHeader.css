@@ -1,0 +1,36 @@
+.anime-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(24px);
+}
+.anime-list-header>*{
+    flex: 1;
+}
+.anime-list-header-center {
+    flex: 2;
+}
+
+.anime-list-header .action-button {
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: white;
+    font-size: 14px;
+    line-height: 14px;
+    transition: .1s;
+    outline: none;
+    cursor: pointer;
+}
+.anime-list-header .action-button:not(:disabled):hover {
+    border: 2px solid rgba(255,255,255,.25);
+}
+.anime-list-header .action-button:not(:disabled):active {
+    background-color: rgba(255,255,255,.25);
+}

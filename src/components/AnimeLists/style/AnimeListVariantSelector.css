@@ -1,0 +1,31 @@
+.anime-list-variant {
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+}
+.anime-list-variant>* {
+    background-color: transparent;
+    border:none;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,.5);
+    outline: none;
+    padding: 4px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: .1s;
+}
+.anime-list-variant>*:first-child {
+    border-left: 2px solid rgba(255,255,255,0.25);
+}
+.anime-list-variant>*:last-child {
+    border-right: 2px solid rgba(255,255,255,0.25);
+}
+.anime-list-variant>*:not(.active):hover {
+    background-color: rgba(0,0,0,0.65);
+}
+.anime-list-variant>*.active {
+    background-color: rgba(0,0,0,0.75);
+    border-bottom: none;
+}

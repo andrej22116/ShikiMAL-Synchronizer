@@ -19,14 +19,25 @@ const MyAnimeListApi = new class {
     }
 
     Users = {
-        me: () => {
+        me: async () => {
             return this.axios.get('/me.php').then( response => response.data );
         },
         
-        animeList: params => {
-            return this.axios.get(`/users/${UserStore.myAnimeList.nickname}/animelist`, {
-                params
-            }).then( response => response.data )
+        animeList: async () => {
+            return this.axios.get(`/list.php`).then( response => response.data );
+        },
+    }
+    Anime = {
+        get: async id => {
+            return this.axios.get(`/raits.php?id=${id}`).then( response => response.data );
+        },
+
+        update: async (id, data) => {
+            return this.axios.patch(`/raits.php?id=${id}`, data).then( response => response.data );
+        },
+
+        delete: async id => {
+            return this.axios.delete(`/raits.php?id=${id}`).then( response => response.data );
         }
     }
 }();

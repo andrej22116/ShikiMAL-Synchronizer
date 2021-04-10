@@ -1,0 +1,42 @@
+.base-toggle {
+    display: flex;
+    align-items: center;
+}
+.base-toggle>div {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.5);
+    width: 36px;
+    min-width: 36px;
+    margin-right: 8px;
+    height: 22px;
+    border-radius: 11px;
+    box-sizing: border-box;
+    position: relative;    
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s;
+    padding: 2px;
+}
+.base-toggle>div>div {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+}
+.base-toggle.checked>div {
+    background-color: rgba(0, 255, 96, .5);
+}
+.base-toggle>div>div.checked {
+    animation: toggle .2s ease-in-out 0s 1 alternate both running;
+}
+.base-toggle>div>div.not-checked {
+    animation: toggle .2s ease-in-out 0s 1 alternate-reverse both running;
+}
+
+@keyframes toggle {
+    from { margin-left: 0;  }
+    to { margin-left: calc(100% - 18px); }
+}

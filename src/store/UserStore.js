@@ -1,6 +1,6 @@
 import { makeAutoObservable, reaction  } from "mobx";
-import ShikimoriApiWrap from "../api/Shikimori/ShikimoriApiWrap";
 import OauthStore from "./OauthStore";
+import ShikimoriApiWrap from "../api/Shikimori/ShikimoriApiWrap";
 import MyAnimeListApiWrap from "../api/MyAnimeList/MyAnimeListApiWrap";
 
 /**

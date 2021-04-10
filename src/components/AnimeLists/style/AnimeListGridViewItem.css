@@ -1,0 +1,151 @@
+.anime-grid-item {
+    width: 300px;
+    height: 426px;
+    position: relative;
+    margin: 24px 8px;
+}
+.anime-grid-item-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+}
+.anime-grid-item:hover .anime-grid-item-wrap {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    transition: .2s;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    z-index: 5;
+}
+
+.anime-grid-item-overlay {
+    position: fixed;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    backdrop-filter: blur(0.1px);
+    transition: backdrop-filter .6s;
+    transition: background-color .6s;
+}
+.anime-grid-item:hover .anime-grid-item-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.anime-grid-item:hover .anime-grid-item-bg.blur {
+    filter: blur(24px);
+}
+
+.anime-grid-item-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.anime-grid-item-bg>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: .1s;
+}
+.anime-grid-item:hover .anime-grid-item-bg{
+    backdrop-filter: none;
+}
+.anime-grid-item:hover .anime-grid-item-bg>img {
+    opacity: 1;
+}
+
+.anime-grid-item-fg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.anime-grid-item-fg .title {
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    line-height: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.anime-grid-item-fg .controls {
+    position: relative;
+    bottom: -100%;
+}
+.anime-grid-item-fg:hover .controls {
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(16px);
+    bottom: 0;
+    transition: bottom .2s; 
+}
+.anime-grid-item-fg .controls .status {
+    padding: 16px 16px 0 16px;
+    display: flex;
+    justify-content: center;
+}
+.anime-grid-item-fg .controls .status>* {
+    width: calc(50% - 14px + 40px + 43px);
+}
+.anime-grid-item-fg .controls .watching {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+.anime-grid-item-fg .controls .watching .input {
+    width: 50%;
+    text-align: center;
+}
+.anime-grid-item-fg .score {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 8px 8px 8px;
+    color: white;
+}
+.anime-grid-item-fg .score span {
+    width: 18px;
+    text-align: center;
+}
+.anime-grid-item-fg .score .icon-star {
+    color: yellow;
+    text-shadow: 0 0 8px yellow;
+}
+.anime-grid-item-fg .score:hover .icon-star {
+    text-shadow: none;
+}
+.anime-grid-item:hover .anime-grid-item-fg {
+}
+
+.anime-grid-item:hover .anime-grid-item-fg .title {
+    white-space: unset;
+}
+
+.anime-grid-item:hover .anime-grid-item-fg .controls {
+
+}

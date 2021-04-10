@@ -1,0 +1,22 @@
+
+.options-toggles,
+.options-toggles>div {
+    display: flex;
+    flex-direction: column;
+}
+.options-toggles>div>* {
+    color: white;
+}
+.options-toggles>div>*:not(:last-child) {
+    margin-bottom: 8px;
+}
+.options-toggles {
+    width: 200px;
+}
+
+.options-toggles>h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}

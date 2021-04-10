@@ -1,0 +1,28 @@
+.anime-list {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.anime-list-header-wrap {
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+}
+
+.anime-list-wrap {
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.anime-list-wrap.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 5;
+}

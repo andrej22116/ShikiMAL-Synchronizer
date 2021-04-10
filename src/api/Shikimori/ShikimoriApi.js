@@ -19,17 +19,30 @@ const ShikimoriApi = new class {
     }
 
     Users = {
-        /*user: id => {
-            return this.axios.get(`/users/${id}`).then( response => response.data );
-        },*/
-
-        me: () => {
+        me: async () => {
             return this.axios.get('/me.php').then( response => response.data );
         },
 
-        /*animeRates: ( params ) => {
-            return this.axios.get(`/users/${UserStore.shikimori.id}/anime_rates`, {params}).then( response => response.data );
-        }*/
+        animeList: async () => {
+            return this.axios.get('/list.php').then( response => response.data );
+        }
+    }
+    Raits = {
+        get: async id => {
+            return this.axios.get(`/raits.php?id=${id}`).then( response => response.data );
+        },
+
+        create: async data => {
+            return this.axios.post('/raits.php', data).then( response => response.data );
+        },
+
+        update: async (id, data) => {
+            return this.axios.patch(`/raits.php?id=${id}`, data).then( response => response.data );
+        },
+
+        delete: async id => {
+            return this.axios.delete(`/raits.php?id=${id}`).then( response => response.data );
+        }
     }
 }();
 
