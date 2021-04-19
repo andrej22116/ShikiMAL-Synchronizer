@@ -58,10 +58,11 @@ export default class ShikimoriApiWrap extends IApiWrap {
     }
 
     __changeAnimeRait( anime ) {
+        console.log(animeStatusToShikimoriStatus(anime));
         ShikimoriApi.Raits.update(anime.raitId, {
             episodes: anime.watchedEpisodes,
             score: anime.score,
             status: animeStatusToShikimoriStatus(anime),
-        }).catch(error => console.error(error));
+        }).then(log => console.log(log)).catch(error => console.error(error));
     }
 }

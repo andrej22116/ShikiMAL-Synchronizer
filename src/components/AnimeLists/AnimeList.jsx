@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AnimeListGridView from "./AnimeListGridView";
+import GridView from "./GridView";
 import { buildBaseAnimeListStore } from "../../store/BaseAnimeListStore";
 import AnimeListHeader from "./AnimeListHeader";
 import "./style/AnimeList.css";
@@ -16,7 +16,7 @@ const AnimeList = observer(() => {
                 <AnimeListHeader store={baseAnimeListStore}/>
             </div>
             <div className="anime-list-wrap">
-                <AnimeListGridView store={baseAnimeListStore}/>
+                <GridView key={baseAnimeListStore.selectedWatchingGroup} store={baseAnimeListStore}/>
             </div>
             {
                 AnimeStore.general.waitList

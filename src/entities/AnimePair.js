@@ -23,7 +23,7 @@ export default class AnimePair {
     get malWatchedEpisodes() { return this._malAnime.episodes.watched; }
 
     get isEqualStatuses() { return this._shikimoriAnime.status === this._malAnime.status; }
-    get status() { return this._malAnime.status; }
+    get status() { return +this._malAnime.status; }
     get shikimoriStatus() { return this._shikimoriAnime.status; }
     get malStatus() { return this._malAnime.status; }
 

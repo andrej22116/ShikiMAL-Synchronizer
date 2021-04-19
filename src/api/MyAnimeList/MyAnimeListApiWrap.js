@@ -62,6 +62,6 @@ export default class MyAnimeListApiWrap extends IApiWrap {
             num_watched_episodes: anime.watchedEpisodes,
             score: anime.score,
             status: animeStatusToMalStatus(anime),
-        }).catch(error => console.error(error));
+        }).then(log => console.log(log)).catch(error => console.error(error));
     }
 }

@@ -16,7 +16,7 @@ export default class Anime {
         this.animeId = animeId;
         this.raitId = raitId;
         this.name = name;
-        this.status = status;
+        this.status = +status;
         this.image = {
             small: smallImage,
             big: bigImage

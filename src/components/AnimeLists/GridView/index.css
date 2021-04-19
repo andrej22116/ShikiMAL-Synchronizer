@@ -1,0 +1,22 @@
+.anime-list-grid-view {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.anime-list-grid-view-row {
+    display: flex;
+    width: 100%;
+}
+.vertical-track {
+    height: 100%;
+    right: 0;
+}
+.vertical-tumb {
+    width: 24px;
+    background-color: rgba(255,255,255,.25);
+    border: 1px solid black;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+
+}

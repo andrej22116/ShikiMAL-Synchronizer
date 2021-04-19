@@ -1,7 +1,8 @@
 import * as STATUS from "../constants/AnimeStatus";
 
 export const animeStatusToMalStatus = anime => {
-    switch (anime.status) {
+    const status = +anime.status;
+    switch (status) {
         case STATUS.WATCHING: return "watching";
         case STATUS.COMPLETED: return "completed";
         case STATUS.PLANED: return "plan_to_watch";
@@ -13,7 +14,8 @@ export const animeStatusToShikimoriStatus = anime => {
     if ( anime.rewatching ) {
         return "rewatching";
     }
-    switch (anime.status) {
+    const status = +anime.status;
+    switch (status) {
         case STATUS.WATCHING: return "watching";
         case STATUS.COMPLETED: return "completed";
         case STATUS.PLANED: return "planned";
