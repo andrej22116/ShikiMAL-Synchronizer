@@ -223,11 +223,19 @@ reaction(
 );
 reaction(
     () => OauthStore.shikimori.isAuthorized,
-    () => AnimeStore.shikimori.updateMaps()
+    () => {
+        if ( OauthStore.shikimori.isAuthorized ) {
+            AnimeStore.shikimori.updateMaps()
+        }
+    }
 );
 reaction(
     () => OauthStore.myAnimeList.isAuthorized,
-    () => AnimeStore.myAnimeList.updateMaps()
+    () => {
+        if ( OauthStore.myAnimeList.isAuthorized ) {
+            AnimeStore.myAnimeList.updateMaps()
+        }
+    }
 );
 
 export default AnimeStore;

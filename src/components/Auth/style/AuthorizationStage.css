@@ -32,15 +32,22 @@
 .auth-colorization-mal-bg {
     background-color: rgba(46,81,161,0.9);
 }
-
+/*
 .authorization-stage-block-header {
 
-}
+}*/
 
 .authorization-stage-block-body {
     display: flex;
     justify-content: space-between;
 }
 .authorization-stage-block-body>div {
-    width: 50%
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+.authorization-stage-block-body>div>h2 {
+    margin-bottom: 12px;
 }

@@ -84,6 +84,12 @@
 .icon-cog-alt:before { content: '\e81b'; } /* '' */
 .icon-mal:before { content: '\e81c'; } /* '' */
 .icon-shikimori:before { content: '\e81d'; } /* '' */
+.icon-sort-by-name-asc:before { content: '\e81e'; } /* '' */
+.icon-sort-by-series-desc:before { content: '\e81f'; } /* '' */
+.icon-sort-by-name-desc:before { content: '\e820'; } /* '' */
+.icon-sort-by-series-asc:before { content: '\e821'; } /* '' */
+.icon-sort-by-score-desc:before { content: '\e822'; } /* '' */
+.icon-sort-by-score-asc:before { content: '\e823'; } /* '' */
 .icon-spin3:before { content: '\e832'; } /* '' */
 .icon-spin4:before { content: '\e834'; } /* '' */
 .icon-download:before { content: '\f02e'; } /* '' */

@@ -1,6 +1,6 @@
 import React from "react";
-import { MyAnimeListMenuBlock } from "../Auth/MyAnimeListAuthBlock";
-import { ShikimoriMenuBlock } from "../Auth/ShikimoriAuthBlock";
+import * as MyAnimeList from "../Auth/MyAnimeList/UserProfileMenuBlock";
+import * as Shikimori from "../Auth/Shikimori/UserProfileMenuBlock";
 import BgImagePathSettingPopup from "./BgImagePathSettingPopup";
 import OptionsPopup from "./OptionsPopup";
 import "./style/LeftMenu.css";
@@ -11,8 +11,8 @@ const LeftMenu = () => {
             <div className="left-menu-bg"></div>
             <div className="left-menu-items">
                 <div>
-                    <ShikimoriMenuBlock/>
-                    <MyAnimeListMenuBlock/>
+                    <Shikimori.UserProfileMenuBlock/>
+                    <MyAnimeList.UserProfileMenuBlock/>
                 </div>
                 <div className="left-menu-items-middle">
 

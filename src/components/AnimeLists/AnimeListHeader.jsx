@@ -1,4 +1,5 @@
 import React from "react";
+import SortVariantSelector from "./AnimeListHeader/SortVariantSelector";
 import AnimeListVariantSelector from "./AnimeListVariantSelector";
 import "./style/AnimeListHeader.css";
 
@@ -7,7 +8,7 @@ const AnimeListHeader = ({store}) => {
     return (
         <div className="anime-list-header">
             <div className="anime-list-header-left">
-                
+                <SortVariantSelector store={store}/>
             </div>
             <div className="anime-list-header-center">
                 <AnimeListVariantSelector store={store}/>

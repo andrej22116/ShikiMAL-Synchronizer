@@ -1,0 +1,16 @@
+.myanimelist-auth-block .base-auth-block-button-wrap>.base-auth-block-button-user-icon {
+    color: white;
+}
+.myanimelist-auth-block .base-auth-block-button-wrap>.login-btn {
+    color: rgba(46,81,161);
+    border-color: white;
+}
+.myanimelist-auth-block .base-auth-block-button-wrap:hover>.login-btn {
+    background-color: rgba(46,81,161,.4);
+}
+.myanimelist-auth-block .base-auth-block-button-wrap:hover>.login-btn>p {
+    text-shadow: 0 0 16px rgb(144, 177, 255), 0 0 4px rgb(144, 177, 255), 0 0 2px rgb(144, 177, 255);
+}
+.myanimelist-auth-block .base-auth-block-user-wrap>.user>.nickname {
+    color: white;
+}

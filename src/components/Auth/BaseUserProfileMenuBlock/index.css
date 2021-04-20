@@ -1,0 +1,96 @@
+.menu-user-block,
+.menu-user-block-overlay {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 72px;
+}
+
+.menu-user-block-img-wrap {
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+}
+.menu-user-block-img-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.menu-user-block-overlay {
+    position: absolute;
+    opacity: 0;
+}
+.menu-user-block:hover .menu-user-block-overlay {
+    display: flex;
+    opacity: 1;
+}
+.menu-user-block-overlay-img {
+    width: 30px;
+    transition: .2s;
+}
+.menu-user-block:hover .menu-user-block-overlay-img {
+    width: 72px;
+    transition: .2s;
+}
+
+.menu-user-block-overlay,
+.menu-user-block-overlay-info {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.menu-user-block-overlay p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+    font-weight: bold;
+    padding: 0 16px;
+}
+
+.menu-user-block-overlay-info {
+    position: relative;
+    left: -100%;
+    transition: .2s;
+    z-index: 100;
+    max-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    backdrop-filter: blur(16px);
+}
+.menu-user-block:hover .menu-user-block-overlay-info {
+    left: 0;
+    max-width: 100%;
+    
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-left: none;
+    padding-right: 16px;
+    z-index: 0;
+}
+
+.menu-user-block-overlay-info button {
+    border: 2px solid rgba(255,255,255,0.15);
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: transparent;
+    height: 2.5em;
+    transition: .15s;
+}
+.menu-user-block-overlay-info button:hover {
+    border: 2px solid rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.15);
+}
+
+.menu-user-block-overlay-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-user-block-overlay-info-text i {
+    color: white;
+}

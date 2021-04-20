@@ -1,7 +1,7 @@
 import React from "react";
-import "./style/MenuUserBlock.css";
+import "./index.css";
 
-const MenuUserBlock = ({userStore, authClient, titleStyleName}) => {
+const BaseUserProfileMenuBlock = ({userStore, authClient, titleStyleName}) => {
     return (
         <div className="menu-user-block" >
             <div className="menu-user-block-base-img menu-user-block-img-wrap">
@@ -23,4 +23,4 @@ const MenuUserBlock = ({userStore, authClient, titleStyleName}) => {
     )
 };
 
-export default MenuUserBlock
+export default BaseUserProfileMenuBlock

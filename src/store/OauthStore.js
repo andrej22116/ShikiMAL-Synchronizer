@@ -4,9 +4,9 @@ function OauthBaseStore() {
     return makeAutoObservable({
         authorization: false,
         isAuthorized: false,
-        token: null,
         setAuthorized() {
             this.isAuthorized = true;
+            this.setAuthorizationProcessState(false);
         },
         setAuthorizationProcessState(state) {
             this.authorization = state;

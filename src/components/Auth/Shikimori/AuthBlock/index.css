@@ -1,0 +1,10 @@
+.shikimori-auth-block .base-auth-block-button-wrap>.base-auth-block-button-user-icon {
+    color: rgba(46,81,161);
+}
+.shikimori-auth-block .base-auth-block-button-wrap>.login-btn {
+    color: white;
+    border-color: rgba(46,81,161);
+}
+.shikimori-auth-block .base-auth-block-button-wrap:hover>.login-btn {
+    background-color: rgba(255,255,255,.4);
+}

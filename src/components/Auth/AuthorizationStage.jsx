@@ -1,6 +1,6 @@
 import React from "react";
-import MyAnimeListAuthBlock from "./MyAnimeListAuthBlock";
-import ShikimoriAuthBlock from "./ShikimoriAuthBlock";
+import * as MyAnimeList  from "./MyAnimeList/AuthBlock";
+import * as Shikimori from "./Shikimori/AuthBlock";
 import "./style/AuthorizationStage.css";
 
 const AuthorizationStage = () => (
@@ -14,17 +14,16 @@ const AuthorizationStage = () => (
                 <p>Shikimal - Your personal tool for syncing Shikimori and MyAnimeList anime lists!</p>
             </div>
             <div className="authorization-stage-block-body">
-                <div className="auth-colorization-shiki-bg">
-                    <h2 className="auth-colorization-shiki-text">Shikimori</h2>
-                    <ShikimoriAuthBlock/>
+                <div className="shikimori auth-colorization-shiki-bg">
+                    <h2 className="auth-colorization-shiki-text"><i className="icon-shikimori"/></h2>
+                    <Shikimori.AuthBlock/>
                 </div>
-                <div className="auth-colorization-mal-bg">
-                    <h2 className="auth-colorization-mal-text">MyAnimeList</h2>
-                    <MyAnimeListAuthBlock/>
+                <div className="myanimelist auth-colorization-mal-bg">
+                    <h2 className="auth-colorization-mal-text"><i className="icon-mal"/></h2>
+                    <MyAnimeList.AuthBlock/>
                 </div>
             </div>
             <div className="authorization-stage-block-footer">
-                
             </div>
         </div>
     </div>

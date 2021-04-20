@@ -39,7 +39,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     }
 
     logout() {
-        this.axios.get('/logout.php');
+        this.axios.get('/logout.php').then(response => console.log(response));
         OauthStore.shikimori.logout();
     }
 }

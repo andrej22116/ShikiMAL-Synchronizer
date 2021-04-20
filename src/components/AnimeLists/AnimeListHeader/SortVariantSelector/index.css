@@ -1,0 +1,27 @@
+.sort-variant-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 16px;
+}
+
+.sort-variant-list>div {
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    color: white;
+    margin-right: 2px;
+    transition: .1s;
+}
+.sort-variant-list>div:last-child {
+    margin: 0;
+}
+.sort-variant-list>div.active,
+.sort-variant-list>div:not(.active):active {
+    border: 2px solid rgba(255,255,255,.4);
+    background-color: rgba(255,255,255,.25);
+}
+.sort-variant-list>div:not(.active):hover {
+    border: 2px solid rgba(255,255,255,.4);
+}
