@@ -2,6 +2,11 @@
 Web page for synchronize anime lists from Shikimori and MyAnimeList. 
 You can try this app [here](https://shikimal.tk).
 
+## Screenshots:
+![Main work space screen](https://ibb.co/xY8yfkQ)
+![MAL profile info](https://ibb.co/34WV26C)
+![Shikimori profile info](https://ibb.co/jg1NhBS)
+
 ## Todo:
 - [x] OAuth2 auth
 - [x] get user profiles info
