@@ -1,9 +1,7 @@
 # ShikiMAL-Synchronizer
 Web page for synchronize anime lists from Shikimori and MyAnimeList. 
 You can try this app [here](https://shikimal.tk).
-<a href="https://ibb.co/xY8yfkQ"><img src="" alt="Screenshot-2021-06-25-032114" border="0"></a>
-<a href="https://ibb.co/34WV26C"><img src="" alt="Screenshot-2021-06-25-032206" border="0"></a>
-<a href="https://ibb.co/jg1NhBS"><img src="" alt="Screenshot-2021-06-25-032227" border="0"></a>
+
 ## Screenshots:
 ![Main work space screen](https://i.ibb.co/DYgN8Jn/Screenshot-2021-06-25-032114.png)
 ![MAL profile info](https://i.ibb.co/TYRJ6jg/Screenshot-2021-06-25-032206.png)
