@@ -5,7 +5,7 @@ const MyAnimeListApi = new class {
     constructor() {
         this.axios = axios.create({
             withCredentials: true,
-            baseURL: 'https://shikimal.tk/myanimelist/',
+            baseURL: `/myanimelist`,
             headers: {
                 "Content-Type": "application/json",
             }
@@ -20,24 +20,24 @@ const MyAnimeListApi = new class {
 
     Users = {
         me: async () => {
-            return this.axios.get('/me.php').then( response => response.data );
+            return this.axios.get('/user/me.php').then( response => response.data );
         },
         
         animeList: async () => {
-            return this.axios.get(`/list.php`).then( response => response.data );
+            return this.axios.get(`/anime/library`).then( response => response.data );
         },
     }
     Anime = {
-        get: async id => {
-            return this.axios.get(`/raits.php?id=${id}`).then( response => response.data );
+        get: async animeId => {
+            return this.axios.get(`/anime/rates/${animeId}`).then( response => response.data );
         },
 
-        update: async (id, data) => {
-            return this.axios.patch(`/raits.php?id=${id}`, data).then( response => response.data );
+        update: async (animeId, data) => {
+            return this.axios.patch(`/anime/rates/${animeId}`, data).then( response => response.data );
         },
 
-        delete: async id => {
-            return this.axios.delete(`/raits.php?id=${id}`).then( response => response.data );
+        delete: async animeId => {
+            return this.axios.delete(`/anime/rates/${animeId}`).then( response => response.data );
         }
     }
 }();

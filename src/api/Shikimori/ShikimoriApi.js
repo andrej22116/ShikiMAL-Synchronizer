@@ -5,7 +5,7 @@ const ShikimoriApi = new class {
     constructor() {
         this.axios = axios.create({
             withCredentials: true,
-            baseURL: 'https://shikimal.tk/shikimori/',
+            baseURL: `/shikimori`,
             headers: {
                 "Content-Type": "application/json"
             }
@@ -20,28 +20,28 @@ const ShikimoriApi = new class {
 
     Users = {
         me: async () => {
-            return this.axios.get('/me.php').then( response => response.data );
+            return this.axios.get('/user/me').then( response => response.data );
         },
 
         animeList: async () => {
-            return this.axios.get('/list.php').then( response => response.data );
+            return this.axios.get('/anime/library').then( response => response.data );
         }
     }
     Raits = {
-        get: async id => {
-            return this.axios.get(`/raits.php?id=${id}`).then( response => response.data );
+        get: async ratesId => {
+            return this.axios.get(`/anime/rates/${ratesId}`).then( response => response.data );
         },
 
         create: async data => {
-            return this.axios.post('/raits.php', data).then( response => response.data );
+            return this.axios.post('/anime/rates', data).then( response => response.data );
         },
 
-        update: async (id, data) => {
-            return this.axios.patch(`/raits.php?id=${id}`, data).then( response => response.data );
+        update: async (ratesId, data) => {
+            return this.axios.patch(`/anime/rates/${ratesId}`, data).then( response => response.data );
         },
 
-        delete: async id => {
-            return this.axios.delete(`/raits.php?id=${id}`).then( response => response.data );
+        delete: async ratesId => {
+            return this.axios.delete(`/anime/rates/${ratesId}`).then( response => response.data );
         }
     }
 }();

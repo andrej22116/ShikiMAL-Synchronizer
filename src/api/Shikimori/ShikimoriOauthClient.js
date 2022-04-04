@@ -8,7 +8,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     constructor() {
         super();
         this.axios = axios.create({
-            baseURL: "https://shikimal.tk/shikimori/",
+            baseURL: `/shikimori/`,
             withCredentials: true
         });
 
@@ -18,7 +18,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     get name() { return 'Shikimori'; }
 
     login() {
-        this._window =  new ShikimoriOauthWindow(this.name, "https://shikimal.tk/shikimori/authorization.php");
+        this._window =  new ShikimoriOauthWindow(this.name, `/shikimori/auth/authorize`);
         reaction(
             () => this._window.isClosed,
             () => {
@@ -31,7 +31,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     }
 
     async logged() {
-        const response = await this.axios.get("/authorized.php").then(response => response.data);
+        const response = await this.axios.get("/auth/authorized").then(response => response.data);
         if ( response.logged ) {
             OauthStore.shikimori.setToken("");
             OauthStore.shikimori.setAuthorized();

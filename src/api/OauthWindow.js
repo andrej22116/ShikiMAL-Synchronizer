@@ -8,7 +8,7 @@ export default class OauthWindow {
             "height=670,width=1400,toolbar=no," +
             "menubar=no,scrollbars=no,resizable=no," +
             "location=no,directories=no,status=no";
-        this.window = window.open(url,name, windowOption);
+        this.window = window.open(url, name, windowOption);
 
         this.isClosed = false;
         makeObservable(this, {
