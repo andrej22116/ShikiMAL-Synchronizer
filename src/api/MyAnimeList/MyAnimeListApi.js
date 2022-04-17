@@ -20,7 +20,7 @@ const MyAnimeListApi = new class {
 
     Users = {
         me: async () => {
-            return this.axios.get('/user/me.php').then( response => response.data );
+            return this.axios.get('/user/me').then( response => response.data );
         },
         
         animeList: async () => {
@@ -33,11 +33,11 @@ const MyAnimeListApi = new class {
         },
 
         update: async (animeId, data) => {
-            return this.axios.patch(`/anime/rates/${animeId}`, data).then( response => response.data );
+            return this.axios.patch(`/anime/rates/update/${animeId}`, data).then( response => response.data );
         },
 
         delete: async animeId => {
-            return this.axios.delete(`/anime/rates/${animeId}`).then( response => response.data );
+            return this.axios.delete(`/anime/rates/delete/${animeId}`).then( response => response.data );
         }
     }
 }();

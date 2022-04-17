@@ -4,8 +4,9 @@ import IApiWrap from "../IApiWrap";
 import MyAnimeListApi from "./MyAnimeListApi";
 
 export default class MyAnimeListApiWrap extends IApiWrap {
-    constructor() {
+    constructor( api = MyAnimeListApi ) {
         super();
+        this.__api = api;
         this.__changeCommiter = new AnimeChangesCommiter(this.__changeAnimeRait);
     }
 
@@ -18,27 +19,27 @@ export default class MyAnimeListApiWrap extends IApiWrap {
     }
 
     async animeList() {
-        return MyAnimeListApi.Users.animeList();
+        return this.__api.Users.animeList();
     }
 
     async animeList_watching() {
-        return MyAnimeListApi.Users.animeList({status: "watching"});
+        return this.__api.Users.animeList({status: "watching"});
     }
 
     async animeList_completed() {
-        return MyAnimeListApi.Users.animeList({status: "completed"});
+        return this.__api.Users.animeList({status: "completed"});
     }
 
     async animeList_dropped() {
-        return MyAnimeListApi.Users.animeList({status: "dropped"});
+        return this.__api.Users.animeList({status: "dropped"});
     }
 
     async animeList_onhold() {
-        return MyAnimeListApi.Users.animeList({status: "on_hold"});
+        return this.__api.Users.animeList({status: "on_hold"});
     }
 
     async animeList_plane2watch() {
-        return MyAnimeListApi.Users.animeList({status: "plan_to_watch"});
+        return this.__api.Users.animeList({status: "plan_to_watch"});
     }
 
     setEpisode( anime ) {
@@ -58,7 +59,7 @@ export default class MyAnimeListApiWrap extends IApiWrap {
     }
 
     __changeAnimeRait( anime ) {
-        MyAnimeListApi.Anime.update(anime.animeId, {
+        this.__api.Anime.update(anime.animeId, {
             num_watched_episodes: anime.watchedEpisodes,
             score: anime.score,
             status: animeStatusToMalStatus(anime),

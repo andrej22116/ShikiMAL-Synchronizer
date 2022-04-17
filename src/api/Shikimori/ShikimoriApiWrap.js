@@ -4,8 +4,9 @@ import IApiWrap from "../IApiWrap";
 import ShikimoriApi from "./ShikimoriApi";
 
 export default class ShikimoriApiWrap extends IApiWrap {
-    constructor() {
+    constructor( api = ShikimoriApi ) {
         super();
+        this.__api = api;
         this.__changeCommiter = new AnimeChangesCommiter(this.__changeAnimeRait);
     }
 
@@ -18,27 +19,27 @@ export default class ShikimoriApiWrap extends IApiWrap {
     }
     
     async animeList() {
-        return ShikimoriApi.Users.animeList();
+        return this.__api.Users.animeList();
     }
 
     async animeList_watching() {
-        return ShikimoriApi.Users.animeList({status: "watching"});
+        return this.__api.Users.animeList({status: "watching"});
     }
 
     async animeList_completed() {
-        return ShikimoriApi.Users.animeList({status: "completed"});
+        return this.__api.Users.animeList({status: "completed"});
     }
 
     async animeList_dropped() {
-        return ShikimoriApi.Users.animeList({status: "dropped"});
+        return this.__api.Users.animeList({status: "dropped"});
     }
 
     async animeList_onhold() {
-        return ShikimoriApi.Users.animeList({status: "on_hold"});
+        return this.__api.Users.animeList({status: "on_hold"});
     }
 
     async animeList_plane2watch() {
-        return ShikimoriApi.Users.animeList({status: "planned"});
+        return this.__api.Users.animeList({status: "planned"});
     }
 
     setEpisode( anime ) {
@@ -59,7 +60,7 @@ export default class ShikimoriApiWrap extends IApiWrap {
 
     __changeAnimeRait( anime ) {
         console.log(animeStatusToShikimoriStatus(anime));
-        ShikimoriApi.Raits.update(anime.raitId, {
+        this.__api.Raits.update(anime.raitId, {
             episodes: anime.watchedEpisodes,
             score: anime.score,
             status: animeStatusToShikimoriStatus(anime),

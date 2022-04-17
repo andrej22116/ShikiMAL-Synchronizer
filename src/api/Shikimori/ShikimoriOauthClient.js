@@ -8,7 +8,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     constructor() {
         super();
         this.axios = axios.create({
-            baseURL: `/shikimori/`,
+            baseURL: `/shikimori/auth`,
             withCredentials: true
         });
 
@@ -31,7 +31,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     }
 
     async logged() {
-        const response = await this.axios.get("/auth/authorized").then(response => response.data);
+        const response = await this.axios.get("/authorized").then(response => response.data);
         if ( response.logged ) {
             OauthStore.shikimori.setToken("");
             OauthStore.shikimori.setAuthorized();
@@ -39,7 +39,7 @@ export default class ShikimoriOauthClient extends OauthClient {
     }
 
     logout() {
-        this.axios.get('/logout.php').then(response => console.log(response));
+        this.axios.get('/logout').then(response => console.log(response));
         OauthStore.shikimori.logout();
     }
 }

@@ -8,7 +8,7 @@ export default class MyAnimeListOauthClient extends OauthClient {
     constructor() {
         super();
         this.axios = axios.create({
-            baseURL: `/myanimelist`,
+            baseURL: `/myanimelist/auth`,
             withCredentials: true
         });
 
@@ -33,7 +33,7 @@ export default class MyAnimeListOauthClient extends OauthClient {
     }
 
     async logged() {
-        const response = await this.axios.get("/auth/authorized").then(response => response.data);
+        const response = await this.axios.get("/authorized").then(response => response.data);
         if ( response.logged ) {
             OauthStore.myAnimeList.setToken("");
             OauthStore.myAnimeList.setAuthorized();
@@ -41,7 +41,7 @@ export default class MyAnimeListOauthClient extends OauthClient {
     }
 
     logout() {
-        this.axios.get('/logout.php');
+        this.axios.get('/logout');
         OauthStore.myAnimeList.logout();
     }
 }

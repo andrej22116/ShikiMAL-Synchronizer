@@ -33,15 +33,15 @@ const ShikimoriApi = new class {
         },
 
         create: async data => {
-            return this.axios.post('/anime/rates', data).then( response => response.data );
+            return this.axios.post('/anime/rates/create', data).then( response => response.data );
         },
 
         update: async (ratesId, data) => {
-            return this.axios.patch(`/anime/rates/${ratesId}`, data).then( response => response.data );
+            return this.axios.patch(`/anime/rates/update/${ratesId}`, data).then( response => response.data );
         },
 
         delete: async ratesId => {
-            return this.axios.delete(`/anime/rates/${ratesId}`).then( response => response.data );
+            return this.axios.delete(`/anime/rates/delete/${ratesId}`).then( response => response.data );
         }
     }
 }();
