@@ -1,0 +1,8 @@
+{
+  "/myanimelist/auth/authorized": "/authorized",
+  "/shikimori/auth/authorized": "/authorized",
+  "/myanimelist/user/me": "/mal-me",
+  "/shikimori/user/me": "/shikimori-me",
+  "/myanimelist/anime/library": "/mal-library",
+  "/shikimori/anime/library": "/shikimori-library"
+}

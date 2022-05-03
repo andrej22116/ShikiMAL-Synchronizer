@@ -22,8 +22,10 @@
     "build": "rimraf ./build && react-scripts build && rimraf ./build/**/*.map",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sslstart": "set HTTPS=true && npm start"
+    "sslstart": "set HTTPS=true && npm start",
+    "server": "json-server --watch fake-server/db.json --port 5000 --routes test-routes.json"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",

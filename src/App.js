@@ -5,7 +5,6 @@ import LeftMenu from "./components/LeftMenu/LeftMenu";
 import AnimeList from "./components/AnimeLists/AnimeList";
 
 function App() {
-
   return (
     <div className="App">
       <LeftMenu />

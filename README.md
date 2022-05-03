@@ -2,6 +2,10 @@
 Web page for synchronize anime lists from Shikimori and MyAnimeList. 
 You can try this app [here](https://shikimal.ml).
 
+## Development
+ `npm run start` for start front-end side.  
+ `npm run server` for start fake back-end side.
+
 ## Screenshots:
 ![Main work space screen](https://i.ibb.co/DYgN8Jn/Screenshot-2021-06-25-032114.png)
 ![MAL profile info](https://i.ibb.co/TYRJ6jg/Screenshot-2021-06-25-032206.png)

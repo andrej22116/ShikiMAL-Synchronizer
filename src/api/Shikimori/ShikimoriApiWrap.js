@@ -11,7 +11,7 @@ export default class ShikimoriApiWrap extends IApiWrap {
     }
 
     async user() {
-        return ShikimoriApi.Users.me().then(data => ({
+        return this.__api.Users.me().then(data => ({
             id: data.id,
             nickname: data.nickname,
             picSrc: data.image.x160

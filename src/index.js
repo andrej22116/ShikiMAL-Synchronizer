@@ -9,6 +9,8 @@ import UserStore from "./store/UserStore";
 import AuthorizationStage from './components/Auth/AuthorizationStage';
 
 (function(){
+  console.log(`Mode: ${process.env.NODE_ENV}`)
+
   if ( window.opener ) {
     window.opener.emitter.emit(`auth-${window.name}`, new URLSearchParams(window.location.search).get('code'));
     window.close();
