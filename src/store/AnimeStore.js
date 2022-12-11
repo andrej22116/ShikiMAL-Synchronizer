@@ -128,7 +128,8 @@ const shikimoriAnimeItemAdapter = item => {
         item.episodes,
         item.anime.episodes,
         item.score,
-        rewatching
+        rewatching,
+        item,
     );
 };
 const malAnimeItemAdapter = item => {
@@ -142,7 +143,8 @@ const malAnimeItemAdapter = item => {
         item.node.my_list_status.num_episodes_watched,
         item.node.num_episodes,
         item.node.my_list_status.score,
-        item.node.my_list_status.is_rewatching
+        item.node.my_list_status.is_rewatching,
+        item,
     );
 };
 

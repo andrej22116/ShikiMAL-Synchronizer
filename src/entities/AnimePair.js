@@ -1,4 +1,5 @@
 import Anime from "./Anime"
+import SettingsStore from "../store/SettingsStore";
 
 export default class AnimePair {
     /**
@@ -14,7 +15,14 @@ export default class AnimePair {
     get shikimoriAnime() { return this._shikimoriAnime; }
     get malAnime() { return this._malAnime; }
 
-    get name() { return this._malAnime.name; }
+    get name() {
+        switch ( SettingsStore.global.cardTitleLang ) {
+            case 'ru': return this._shikimoriAnime.raw.anime.russian;
+            case 'en': return this._malAnime.raw.node.alternative_titles['en'] || this._malAnime.name;
+            case 'jp': return this._malAnime.raw.node.alternative_titles['ja'] || this._malAnime.name;
+            default: return this._malAnime.name;
+        }
+    }
 
     get isEqualEpisodes() { return this._shikimoriAnime.episodes.watched === this._malAnime.episodes.watched; }
     get watchedEpisodes() { return this._malAnime.episodes.watched; }

@@ -11,7 +11,8 @@ export default class Anime {
         watchedEpisodes,
         totalEpisodes,
         score,
-        rewatching
+        rewatching,
+        rawObject,
     ) {
         this.animeId = animeId;
         this.raitId = raitId;
@@ -27,6 +28,8 @@ export default class Anime {
         };
         this.score = score;
         this.rewatching = rewatching;
+
+        this.raw = rawObject;
 
         makeObservable(this, {
             episodes: observable,
