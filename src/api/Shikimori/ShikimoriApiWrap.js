@@ -6,6 +6,9 @@ import ShikimoriApi from "./ShikimoriApi";
 export default class ShikimoriApiWrap extends IApiWrap {
     constructor( api = ShikimoriApi ) {
         super();
+
+        this.__changeAnimeRait = this.__changeAnimeRait.bind(this);
+
         this.__api = api;
         this.__changeCommiter = new AnimeChangesCommiter(this.__changeAnimeRait);
     }

@@ -6,6 +6,9 @@ import MyAnimeListApi from "./MyAnimeListApi";
 export default class MyAnimeListApiWrap extends IApiWrap {
     constructor( api = MyAnimeListApi ) {
         super();
+
+        this.__changeAnimeRait = this.__changeAnimeRait.bind(this);
+
         this.__api = api;
         this.__changeCommiter = new AnimeChangesCommiter(this.__changeAnimeRait);
     }
