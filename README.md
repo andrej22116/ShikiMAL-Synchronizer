@@ -1,6 +1,6 @@
 # ShikiMAL-Synchronizer
 Web page for synchronize anime lists from Shikimori and MyAnimeList. 
-You can try this app [here](https://shikimal.ml).
+You can try this app [here](https://shikimal.andrewcpp.com).
 
 ## Development
  `npm run start` for start front-end side.  
